@@ -1,7 +1,7 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
 <link href='style.css' rel='stylesheet' type='text/css'>
-<title>8values Quiz</title>
+<title>Chapo 8values Quiz</title>
 <link rel="icon" type="x-icon" href="icon.png">
 <link rel="shortcut icon" type="x-icon" href="icon.png">
 <meta charset="utf-8">
@@ -100,10 +100,36 @@ stats"></a></div></noscript>
         init_question();
 
     }
+
     function calc_score(score,max) {
         return (100*(max+score)/(2*max)).toFixed(1)
     }
+
+    function lib_score() {
+        if (Math.random() > 0.5) {
+            return (50 + (Math.random() * 4)).toFixed(1);
+        } else {
+            return (50 - (Math.random() * 4)).toFixed(1);
+        }
+    }
+
     function results() {
+        if (Math.random() > 0.9) {
+            reg_results();
+        } else {
+            lib_results();
+        }
+    }
+
+    function lib_results() {
+        location.href = 'results.html'
+            + `?e=${lib_score()}`
+            + `&d=${lib_score()}`
+            + `&g=${lib_score()}`
+            + `&s=${lib_score()}`;
+    }
+
+    function reg_results() {
         location.href = `results.html`
             + `?e=${calc_score(econ,max_econ)}`
             + `&d=${calc_score(dipl,max_dipl)}`

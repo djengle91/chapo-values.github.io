@@ -108,7 +108,7 @@ stats"></a></div></noscript>
 
     function results() {
         const r = Math.random();
-        if (window.location.search.includes('retry') && r > 0.9) {
+        if (localStorage.getItem('hasTakenQuiz') && r > 0.9) {
             reg_results();
         } else if (r > 0.75) {
             reg_results();

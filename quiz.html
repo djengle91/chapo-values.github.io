@@ -107,7 +107,10 @@ stats"></a></div></noscript>
     }
 
     function results() {
-        if (Math.random() > 0.9) {
+        const r = Math.random();
+        if (window.location.search.includes('retry') && r > 0.9) {
+            reg_results();
+        } else if (r > 0.75) {
             reg_results();
         } else {
             lib_results();

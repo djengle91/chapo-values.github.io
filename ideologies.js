@@ -234,7 +234,7 @@ ideologies = [
         }
     },
     {
-        "name": "Centrist",
+        "name": "Liberal",
         "stats": {
             "econ": 50,
             "dipl": 50,
